@@ -14,6 +14,6 @@ model lesson {
   id          Int @id @default(autoincrement())
   title       String
   description String @db.MediumText
-  image_url   String @db.VarChar(255)
-  created_at  DateTime @default(now())
+  image_url   String? @db.VarChar(255)
+  created_at  DateTime? @default(now())
 }

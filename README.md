@@ -75,6 +75,8 @@ npx prisma db push
 
 You can now create a merge request in PlanetScale.
 
+> To update your Typescript definitions, run `npx prisma generate`.
+
 #### Further reading
 
 Continue following this guide: https://planetscale.com/docs/tutorials/automatic-prisma-migrations#execute-your-first-prisma-db-push
