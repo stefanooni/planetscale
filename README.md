@@ -51,11 +51,37 @@ When using PlanetScale with Prisma, the responsibility of applying the changes i
 pscale auth login
 ```
 
+#### Quickly create and connect to a new branch
+
+You can quickly create and connect to branch by running:
+
+```
+./branch.sh new-branch-name
+```
+
+> Note: Ensure you do not have a running service of `pscale connect` which could cause conflict in ports.
+
+> Note: The `branch.sh` script has hardcoded the database name, this will need to be changed if the repository is cloned.
+
+#### Quickly deploy a migration
+
+After running the above command from "Quickly create and connect to a new branch", you can make your modifications to the schema file.
+
+After making those changes, run this command in a new terminal
+
+```
+npx prisma db push
+```
+
+You can now create a merge request in PlanetScale.
+
 #### Further reading
 
 Continue following this guide: https://planetscale.com/docs/tutorials/automatic-prisma-migrations#execute-your-first-prisma-db-push
 
 ### 2. Prisma Migrations (Quicker development, less robust)
+
+> This method is very similar to how traditional frameworks create database migrations like Laravel.
 
 If we use this option, we can commit migrations inside PRs which will be applied to a production database. During development, each engineer could have their own branch which will only consist of their development. When a PR is created, this is checked by another engineer and on approval, we could have a Git Action script run to push the changes to the PlanetScale's production branch.
 
