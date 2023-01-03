@@ -1,5 +1,7 @@
 # Getting started
 
+A 5-min loom to run through this repo (disclaimer: the repo may change a little since this loom was recorded): https://www.loom.com/share/ae703837b30a495f91c378862653c6a6
+
 ## Set up a PlanetScale database
 
 After logging into PlanetScale, you can create a new database by clicking on "New database". You will give it a name (you'll need this later).
